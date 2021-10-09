@@ -118,6 +118,7 @@ const charCode = (arr) => {
   let numberofchar=arr.map(element,idx=>{
     return element.charCodeAt(idx)
   })
+  return numberofchar
 };
 
 /* ------------------------------------------------------------------------------------------------

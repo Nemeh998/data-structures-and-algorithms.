@@ -8,6 +8,14 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
+  let newArray=[]
+  for(let i=0;i<arr.length;i++){
+    // console.log(arr[i],'arr[i]')
+    // console.log(arr.length,'arr.length')
+    // console.log(Number (arr[i]+2))
+newArray.push(arr[i]+2)
+  }
+  return newArray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,6 +28,17 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
+  let num=arr.filter((element)=>{
+
+ if(typeof(element)=='number'){
+return true
+
+ }
+ 
+ 
+})
+return num
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,6 +51,12 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
+  let string=arr.filter((element)=>{
+   if(element.indexOf('and')!==-1) {
+     return true
+   }
+  })
+return string
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,6 +69,12 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  let oddnumber=arr.filter((element)=>{
+    if(element%2!==0) {
+      return true
+    }
+   })
+ return oddnumber
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,6 +87,18 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+     let number=arr.filter((element)=>{
+
+     return !(forbiddenValues.includes(element))
+   
+    
+ 
+   })
+    
+   
+
+   
+ return number
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +141,14 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+// Solution code here...
+let obj=arr.filter((element)=>{
+  let d=element.stat.name
+if(d.indexOf('special')!==-1){
+  return true
+}
+  })
+  return obj
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,7 +160,14 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+ // Solution code here...
+let obj=arr.filter((element)=>{
+  let d=element.stat.name
+if(d.indexOf('special')!==-1){
+  return element.stat.name
+}
+  })
+  return obj
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +175,6 @@ CHALLENGE 8 - Stretch Goal
 
 Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
 ------------------------------------------------------------------------------------------------ */
-
 const characters = [
   {
     name: 'Eddard',
@@ -164,7 +220,16 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  let obj=arr.filter(element=>{
+    // console.log(element.children)
+   if(!(element.children)) {
+     return true
+   }
+   
+  })
+  console.log(obj)
 };
+// console.log(getCharactersWithoutChildren(characters),'m')
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -176,6 +241,19 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
+   // Solution code here...
+   let oddnumber=arr.filter((element)=>{
+if(typeof(element)=='string'){
+  return 'even'
+}
+    else if(element%2!==0) {
+      return 'even'
+    }
+    else{
+      return 'odd'
+    }
+   })
+ return oddnumber
 };
 
 /* ------------------------------------------------------------------------------------------------
